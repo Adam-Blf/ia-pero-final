@@ -24,6 +24,33 @@ Application utilisant **NLP semantique (SBERT)** et **generation GenAI (Google G
 **Formation** : EFREI Paris - Mastere Data Engineering et IA
 **Annee** : 2025-2026
 
+## Architecture
+
+```mermaid
+flowchart TB
+    UI["src/app.py<br/>Streamlit · interface Speakeasy · questionnaire hybride"]
+    Backend["src/backend.py<br/>RAG · guardrail sémantique · génération"]
+    Embed["src/embeddings.py<br/>SBERT all-MiniLM-L6-v2 · matrice de similarité"]
+    Scoring["src/scoring.py<br/>coverage score pondéré · profil gustatif"]
+    Profiler["src/ingredient_profiler.py<br/>profil 7 dimensions"]
+    Kaggle["src/kaggle_integration.py<br/>enrichissement dataset Kaggle"]
+    Data["data/<br/>cocktails.csv · kaggle_enriched.csv · known_ingredients.json"]
+    Gemini["Google Gemini<br/>génération de recette"]
+    Cache["cache JSON<br/>recettes déjà générées"]
+    Radar["Plotly<br/>graphique radar gustatif"]
+
+    UI --> Backend
+    UI --> Embed
+    UI --> Scoring
+    UI --> Radar
+    Backend --> Embed
+    Backend --> Cache
+    Backend --> Gemini
+    Scoring --> Profiler
+    Embed --> Data
+    Kaggle --> Data
+```
+
 ## Documentation
 
 | Document | Description |
