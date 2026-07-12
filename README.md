@@ -28,13 +28,13 @@ Application utilisant **NLP semantique (SBERT)** et **generation GenAI (Google G
 
 ```mermaid
 flowchart TB
-    UI["src/app.py<br/>Streamlit · interface Speakeasy · questionnaire hybride"]
-    Backend["src/backend.py<br/>RAG · guardrail sémantique · génération"]
-    Embed["src/embeddings.py<br/>SBERT all-MiniLM-L6-v2 · matrice de similarité"]
-    Scoring["src/scoring.py<br/>coverage score pondéré · profil gustatif"]
+    UI["src/app.py<br/>Streamlit - interface Speakeasy - questionnaire hybride"]
+    Backend["src/backend.py<br/>RAG - guardrail sémantique - génération"]
+    Embed["src/embeddings.py<br/>SBERT all-MiniLM-L6-v2 - matrice de similarité"]
+    Scoring["src/scoring.py<br/>coverage score pondéré - profil gustatif"]
     Profiler["src/ingredient_profiler.py<br/>profil 7 dimensions"]
     Kaggle["src/kaggle_integration.py<br/>enrichissement dataset Kaggle"]
-    Data["data/<br/>cocktails.csv · kaggle_enriched.csv · known_ingredients.json"]
+    Data["data/<br/>cocktails.csv - kaggle_enriched.csv - known_ingredients.json"]
     Gemini["Google Gemini<br/>génération de recette"]
     Cache["cache JSON<br/>recettes déjà générées"]
     Radar["Plotly<br/>graphique radar gustatif"]
@@ -536,7 +536,7 @@ MIT
 ---
 
 <p align="center">
-  <sub>Par <a href="https://adam.beloucif.com">Adam Beloucif</a> · Data Engineer & Fullstack Developer · <a href="https://github.com/Adam-Blf">GitHub</a> · <a href="https://www.linkedin.com/in/adambeloucif/">LinkedIn</a></sub>
+  <sub>Par <a href="https://adam.beloucif.com">Adam Beloucif</a> - Data Engineer & Fullstack Developer - <a href="https://github.com/Adam-Blf">GitHub</a> - <a href="https://www.linkedin.com/in/adambeloucif/">LinkedIn</a></sub>
 </p>
 
 
